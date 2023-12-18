@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp6.Views.ProductDetailPage"
+             xmlns:local="clr-namespace:MauiApp6.Models"
+             Title="Product Detail Page"
+             >
+    <StackLayout>
+        <Frame>
+            <Label Text="{Binding Product.Name}" FontSize="Title" />
+        </Frame>
+        <Frame>
+            <Label Text="{Binding Product.Description}" />
+        </Frame>
+        <Frame>
+        <Label Text="{Binding Product.Price, StringFormat='Price: {0:C}'}" />
+        </Frame>
+
+        <Button Text="Add to Cart" Clicked="Button_Clicked" />
+       
+    </StackLayout>
+</ContentPage>

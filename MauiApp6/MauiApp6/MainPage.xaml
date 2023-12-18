@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp6.MainPage"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             xmlns:local="clr-namespace:MauiApp6.Models">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="ToolbarItem_Clicked" Text="Add" Order="Primary"  IconImageSource="{FontImage Glyph='&#x1F6D2;', Size=22}"></ToolbarItem>
+        <ToolbarItem Order="Secondary" x:Name="cartText" Text="0 item in cart" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <SearchBar  Placeholder="Search Products" TextChanged="searchBar_TextChanged" />
+        <ListView x:Name="productListView" ItemsSource="{Binding Products}" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
